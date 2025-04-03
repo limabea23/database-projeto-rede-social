@@ -1,14 +1,15 @@
 CREATE TABLE usuarios (
     id_usuario SERIAL PRIMARY KEY,
+    foto_capa VARCHAR(255),
+    foto_perfil VARCHAR(255),
     nome VARCHAR(100) NOT NULL,
     username VARCHAR(50) NOT NULL,
-    email VARCHAR(150) UNIQUE NOT NULL,
-    senha VARCHAR(255) NOT NULL,
     tipo_conta VARCHAR(50) CHECK (tipo_conta IN ('Empresa', 'Pessoal')), 
-    foto_perfil VARCHAR(255),
-    foto_capa VARCHAR(255),
-    descricao TEXT,
-    especializacoes TEXT
+    email VARCHAR(150) UNIQUE NOT NULL,
+    data_nascimento DATE NOT NULL,
+    biografia TEXT,
+    especializacoes TEXT,
+    senha VARCHAR(255) NOT NULL
 );
 
 INSERTS TESTES
